@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 18, 2015 12:34:35 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.NewsTB" table="NEWSTB">
+        <id name="newsId" type="java.lang.Integer">
+            <column name="NEWSID" />
+            <generator class="increment" />
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="TITLE" />
+        </property>
+        <property name="subTitle" type="java.lang.String">
+            <column name="SUBTITLE" />
+        </property>
+        <property name="newsContent" type="java.lang.String">
+            <column name="NEWSCONTENT" />
+        </property>
+        <property name="date" type="java.lang.String">
+            <column name="DATE" />
+        </property>
+        <property name="image" type="java.lang.String" not-null="false">
+            <column name="IMAGE" />
+        </property>
+        <property name="Status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="expDate" type="java.lang.String" not-null="false">
+            <column name="EXPDATE" />
+        </property>
+        <property name="expired" type="java.lang.Integer" not-null="false">
+            <column name="EXPIRED" />
+        </property>
+        <property name="entryBy" type="java.lang.Integer" not-null="false">
+            <column name="ENTRYBY" />
+        </property>
+        <property name="entryDate" type="java.lang.String" not-null="false">
+            <column name="ENTRYDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 8, 2015 10:26:04 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.EventsTB" table="EVENTSTB">
+        <id name="eventId" type="int">
+            <column name="EVENTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="details" type="java.lang.String">
+            <column name="DETAILS" />
+        </property>
+        <property name="location" type="java.lang.String">
+            <column name="LOCATION" />
+        </property>
+        <property name="eventDate" type="java.lang.String">
+            <column name="EVENTDATE" />
+        </property>
+        <property name="eventTime" type="java.lang.String">
+            <column name="EVENTTIME" />
+        </property>
+        <property name="eventBy" type="int">
+            <column name="EVENTBY" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="going" type="int">
+            <column name="GOING" />
+        </property>
+        <property name="mayBe" type="int">
+            <column name="MAYBE" />
+        </property>
+    </class>
+</hibernate-mapping>

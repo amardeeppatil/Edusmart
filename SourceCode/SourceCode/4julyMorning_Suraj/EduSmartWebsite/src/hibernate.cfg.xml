@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="connection.url">jdbc:mysql://sql.excellenceserver.com:3306/Edusmartweb</property>
+	    <property name="connection.username">root</property>
+		<property name="connection.password">sqlp@ssw0rd</property>
+		<property name="connection.pool_size">1</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="show_sql">true</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	
+		
+	 	<mapping class="com.edusmart.dao.City" />  
+	    <mapping class="com.edusmart.dao.CountryTB" /> 
+		<mapping class="com.edusmart.dao.StateTB" />
+		<mapping class="com.edusmart.dao.BranchTB" />
+		<mapping class="com.edusmart.dao.Holiday" />
+		<mapping class="com.edusmart.dao.LevelOfStudyTB" />
+		<mapping class="com.edusmart.dao.ModeOfCoachingTB" />
+		<mapping class="com.edusmart.dao.CourseSubjectTB" />
+		<mapping class="com.edusmart.dao.MediaSourceMasterTB" />
+		<mapping class="com.edusmart.dao.EnquiryAssignTB" />
+		<mapping class="com.edusmart.dao.Enquiry_Subject_TB" />
+		<mapping class="com.edusmart.dao.EducationMasterTB" />
+		<mapping class="com.edusmart.dao.EnquiryFollowUpTB" />
+		<mapping class="com.edusmart.dao.ExamTermTB" />
+		<mapping class="com.edusmart.dao.CallStatusMasterTB"/>
+		<mapping class="com.edusmart.dao.AcademyTB"/>
+		<mapping class="com.edusmart.dao.UserProfileTB"/>
+		<mapping class="com.edusmart.dao.TagsTB"/>
+		<mapping class="com.edusmart.dao.EventsTB"/>
+		<mapping class="com.edusmart.dao.NewsTB"/>
+		<mapping class="com.edusmart.dao.Faculty"/>
+		<mapping class="com.edusmart.dao.ProductSubCategoryMasterTB"/>
+		<mapping class="com.edusmart.dao.ProductTB"/>
+		<mapping class="com.edusmart.dao.AboutTB"/>
+		<mapping class="com.edusmart.dao.CommentLikeTb"/>
+		<mapping class="com.edusmart.dao.NotificationTb"/>
+		<mapping class="com.edusmart.dao.MessageTB"/>
+		
+</session-factory>
+
+</hibernate-configuration>

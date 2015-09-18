@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 4, 2014 10:51:07 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.EducationMasterTB" table="EDUCATIONMASTERTB">
+        <id name="EducationId" type="int">
+            <column name="EDUCATIONID" />
+            <generator class="increment" />
+        </id>
+        <property name="EducationName" type="java.lang.String">
+            <column name="EDUCATIONNAME" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

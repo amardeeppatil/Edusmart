@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 30, 2014 11:33:55 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.FacultySubjectTB" table="FACULTYSUBJECTTB">
+        <id name="FacultySubjectId" type="int">
+            <column name="FACULTYSUBJECTID" />
+            <generator class="increment" />
+        </id>
+        <property name="BranchID" type="int">
+            <column name="BRANCHID" />
+        </property>
+        <property name="CourseID" type="int">
+            <column name="COURSEID" />
+        </property>
+        <property name="LevelId" type="int">
+            <column name="LEVELID" />
+        </property>
+        <property name="SubjectId" type="int">
+            <column name="SUBJECTID" />
+        </property>
+        <property name="ModeId" type="int">
+            <column name="MODEID" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="FromDate" type="java.lang.String">
+            <column name="FROMDATE" />
+        </property>
+        <property name="ToDate" type="java.lang.String">
+            <column name="TODATE" />
+        </property>
+        <property name="FromTime" type="java.lang.String">
+            <column name="FROMTIME" />
+        </property>
+        <property name="ToTime" type="java.lang.String">
+            <column name="TOTIME" />
+        </property>
+        <property name="Capacity" type="int">
+            <column name="CAPACITY" />
+        </property>
+        <property name="TuitionFee" type="double">
+            <column name="TUITIONFEE" />
+        </property>
+        <property name="ApprovalStatus" type="java.lang.String">
+            <column name="APPROVALSTATUS" />
+        </property>
+        <property name="UserId" type="int">
+            <column name="USERID" />
+        </property>
+        <many-to-one name="Faculty" class="com.edusmart.dao.UserProfileTB" fetch="select">
+            <column name="UserId" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

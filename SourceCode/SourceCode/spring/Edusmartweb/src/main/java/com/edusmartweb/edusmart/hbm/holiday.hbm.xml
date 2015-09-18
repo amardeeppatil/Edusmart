@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 5, 2014 4:40:16 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.Holiday" table="HOLIDAYTB">
+        <id name="HolidayId" type="int">
+            <column name="HOLIDAYID" />
+            <generator class="increment" />
+        </id>
+        <property name="HolidayName" type="java.lang.String">
+            <column name="HOLIDAYNAME" />
+        </property>
+        <property name="HolidayDate" type="java.lang.String">
+            <column name="HOLIDAYDATE" />
+        </property>
+        <property name="User_ID" type="int">
+            <column name="USER_ID" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

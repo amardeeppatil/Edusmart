@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+ <!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<property name="connection.url">jdbc:mysql://sql.excellenceserver.com:3306/edusmartweb</property>
+	    <property name="connection.username">root</property>
+		<property name="connection.password">sqlp@ssw0rd</property>
+		<property name="connection.pool_size">1</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="show_sql">true</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		
+	 	<mapping class="com.edusmartweb.edusmart.model.City" />  
+	    <mapping class="com.edusmartweb.edusmart.model.CountryTB" /> 
+		<mapping class="com.edusmartweb.edusmart.model.StateTB" />
+		<mapping class="com.edusmartweb.edusmart.model.BranchTB" />
+		<mapping class="com.edusmartweb.edusmart.model.Holiday" />
+		<mapping class="com.edusmartweb.edusmart.model.LevelOfStudyTB" />
+		<mapping class="com.edusmartweb.edusmart.model.ModeOfCoachingTB" />
+		<mapping class="com.edusmartweb.edusmart.model.MediaSourceMasterTB" />
+	<!--<mapping class="com.edusmartweb.edusmart.model.EnquiryAssignTB" />
+	    <mapping class="com.edusmartweb.edusmart.model.Enquiry_Subject_TB" /> 
+		<mapping class="com.edusmartweb.edusmart.model.EducationMasterTB" />
+		<mapping class="com.edusmartweb.edusmart.model.EnquiryFollowUpTB" />-->
+		<mapping class="com.edusmartweb.edusmart.model.ExamTermTB" />
+		<mapping class="com.edusmartweb.edusmart.model.CallStatusMasterTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.AcademyTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.UserProfileTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.TagsTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.EventsTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.NewsTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.ProductSubCategoryMasterTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.ProductTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.AboutTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.CommentLikeTb"/>
+		<mapping class="com.edusmartweb.edusmart.model.NotificationTb"/>
+		<mapping class="com.edusmartweb.edusmart.model.MessageTB"/>
+	    <mapping class="com.edusmartweb.edusmart.model.FacultyTb"/>
+	    <mapping class="com.edusmartweb.edusmart.model.CourseTB"/>
+	    <mapping class="com.edusmartweb.edusmart.model.SubjectLevelTB"/>
+	    <mapping class="com.edusmartweb.edusmart.model.SendRequestDetails"/>
+	     <mapping class="com.edusmartweb.edusmart.model.FacultyDetailsTB"/>
+		<mapping class="com.edusmartweb.edusmart.model.Product"/>
+		<mapping class="com.edusmartweb.edusmart.model.VirtualClassProduct"/>
+</session-factory>
+
+</hibernate-configuration>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 8, 2015 10:26:04 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.CommentsTB" table="COMMENTSTB">
+        <id name="postId" type="int">
+            <column name="POSTID" />
+            <generator class="assigned" />
+        </id>
+        <property name="commentId" type="int">
+            <column name="COMMENTID" />
+        </property>
+        <property name="commentBy" type="int">
+            <column name="COMMENTBY" />
+        </property>
+        <property name="comment" type="java.lang.String">
+            <column name="COMMENT" />
+        </property>
+        <property name="commentImage" type="java.lang.String">
+            <column name="COMMENTIMAGE" />
+        </property>
+        <property name="commentDate" type="java.lang.String">
+            <column name="COMMENTDATE" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

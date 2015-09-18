@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2014 11:00:55 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.Faculty" table="FacultyTB">
+        <id name="FacultyId" type="int">
+            <column name="FacultyId" />
+            <generator class="increment" />
+        </id>
+        <property name="UserCode" type="java.lang.String">
+            <column name="USERCODE" />
+        </property>
+        <property name="UserName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="Password" type="java.lang.String">
+            <column name="PASSWORD" />
+        </property>
+        <property name="IsProfileUpdated" type="int">
+            <column name="ISPROFILEUPDATED" />
+        </property>
+        <property name="UserType" type="int">
+            <column name="USERTYPE" />
+        </property>
+        <property name="FName" type="java.lang.String">
+            <column name="FNAME" />
+        </property>
+        <property name="MName" type="java.lang.String">
+            <column name="MNAME" />
+        </property>
+        <property name="LName" type="java.lang.String">
+            <column name="LNAME" />
+        </property>
+        <property name="DOB" type="java.lang.String">
+            <column name="DOB" />
+        </property>
+        <property name="Email" type="java.lang.String">
+            <column name="EMAIL" />
+        </property>
+        <property name="Contact" type="java.lang.String">
+            <column name="CONTACT" />
+        </property>
+        <property name="Gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="BloodGroup" type="java.lang.String">
+            <column name="BLOODGROUP" />
+        </property>
+        <property name="Image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+        <property name="CAddress1" type="java.lang.String">
+            <column name="CADDRESS1" />
+        </property>
+        <property name="CAddress2" type="java.lang.String">
+            <column name="CADDRESS2" />
+        </property>
+        <property name="CCountry" type="int">
+            <column name="CCOUNTRY" />
+        </property>
+        <property name="CState" type="int">
+            <column name="CSTATE" />
+        </property>
+        <property name="CCity" type="java.lang.String">
+            <column name="CCITY" />
+        </property>
+        <property name="CPincode" type="int">
+            <column name="CPINCODE" />
+        </property>
+        <property name="PAddress1" type="java.lang.String">
+            <column name="PADDRESS1" />
+        </property>
+        <property name="PAddress2" type="java.lang.String">
+            <column name="PADDRESS2" />
+        </property>
+        <property name="PCountry" type="int">
+            <column name="PCOUNTRY" />
+        </property>
+        <property name="PState" type="int">
+            <column name="PSTATE" />
+        </property>
+        <property name="PCity" type="java.lang.String">
+            <column name="PCITY" />
+        </property>
+        <property name="PPincode" type="int">
+            <column name="PPINCODE" />
+        </property>
+        <property name="EFName" type="java.lang.String">
+            <column name="EFNAME" />
+        </property>
+        <property name="EMName" type="java.lang.String">
+            <column name="EMNAME" />
+        </property>
+        <property name="ELName" type="java.lang.String">
+            <column name="ELNAME" />
+        </property>
+        <property name="EContact" type="java.lang.String">
+            <column name="ECONTACT" />
+        </property>
+        <property name="EEmail" type="java.lang.String">
+            <column name="EEMAIL" />
+        </property>
+         <!-- <property name="ProfessionalExperience" type="java.lang.String">
+            <column name="PROFESSIONALEXPERIENCE" />
+        </property> -->
+        <property name="Relationship" type="java.lang.String">
+            <column name="RELATIONSHIP" />
+        </property>
+        <property name="Status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="EntryDate" type="java.lang.String">
+            <column name="ENTRYDATE" />
+        </property>
+        <property name="BranchId" type="int">
+            <column name="BRANCHID" />
+        </property>
+        <property name="AutoOrManual" type="int">
+            <column name="AutoOrManual" />
+        </property>
+        
+        <many-to-one name="Academy" column="Academy" class="com.edusmart.dao.AcademyTB" cascade="all" not-null="true"></many-to-one>
+        
+        <!-- <property name="ProfileImage" type="java.lang.String">
+            <column name="PROFILEIMAGE" />
+        </property>
+        <property name="WallpaperImageArray" type="java.lang.String">
+            <column name="WALLPAPERIMAGEARRAY" />
+        </property>
+        <property name="BannerImageArray" type="java.lang.String">
+            <column name="BANNERIMAGEARRAY" />
+        </property> -->
+        
+        <!-- <property name="BankName" type="java.lang.String">
+            <column name="BankName" />
+        </property>
+        <property name="AccountType" type="java.lang.String">
+            <column name="AccountType" />
+        </property>
+        <property name="IfscCode" type="java.lang.String">
+            <column name="IfscCode" />
+        </property>
+        <property name="AccountNumber" type="java.lang.String">
+            <column name="AccountNumber" />
+        </property> -->
+    </class>
+</hibernate-mapping>

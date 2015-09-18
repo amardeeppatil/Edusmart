@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 8, 2014 3:05:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.CountryTB" table="COUNTRYTB">
+        <id name="CountryID" type="int">
+            <column name="COUNTRYID" />
+            <generator class="increment" />
+        </id>
+        <property name="CountryName" type="java.lang.String">
+            <column name="COUNTRYNAME" />
+        </property>
+        <property name="CountryCode" type="java.lang.String">
+            <column name="COUNTRYCODE" />
+        </property>
+        <property name="ContinentID" type="int">
+            <column name="CONTINENTID" />
+        </property>
+        <property name="DialCode" type="int">
+            <column name="DIALCODE" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 19, 2014 12:17:10 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.AcademyTB" table="ACADEMYTB">
+        <id name="AcademyId" type="int">
+            <column name="ACADEMYID" />
+            <generator class="increment" />
+        </id>
+        <property name="AcademyName" type="java.lang.String">
+            <column name="ACADEMYNAME" />
+        </property>
+        <property name="EmailId" type="java.lang.String">
+            <column name="EMAILID" />
+        </property>
+        <property name="Phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="Logo" type="java.lang.String">
+            <column name="LOGO" />
+        </property>
+        <property name="AboutInfo" type="java.lang.String">
+            <column name="ABOUTINFO" />
+        </property>
+        <property name="BankAccountNo" type="java.lang.String">
+            <column name="BANKACCOUNTNO" />
+        </property>
+        <property name="BankName" type="java.lang.String">
+            <column name="BANKNAME" />
+        </property>
+        <property name="IFSCCode" type="java.lang.String">
+            <column name="IFSCCODE" />
+        </property>
+        <property name="Country" type="int">
+            <column name="COUNTRY" />
+        </property>
+        <property name="State" type="int">
+            <column name="STATE" />
+        </property>
+        <property name="City" type="int">
+            <column name="CITY" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="Website" type="java.lang.String">
+            <column name="WEBSITE" />
+        </property>
+        <property name="lattitude" type="java.lang.String">
+            <column name="LATTITUDE" />
+        </property>
+        <property name="Longitude" type="java.lang.String">
+            <column name="LONGITUDE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

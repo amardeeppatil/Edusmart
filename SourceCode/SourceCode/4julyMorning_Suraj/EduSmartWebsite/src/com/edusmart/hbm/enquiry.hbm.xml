@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 24, 2014 6:34:14 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.EnquiryTB" table="EnquiryTB">
+        <id name="EnquiryID">
+            <generator class="increment"></generator>
+        </id>
+        <property name="EnquiryNo"></property>
+        <property name="EnquiryDate"></property>
+        <property name="EnquiryStatus"></property>
+        <property name="FirstName"></property>
+        <property name="EmailID"></property>
+        <property name="ContactNo"></property>
+        <property name="Street1"></property>
+        <property name="BranchID"></property>
+        <property name="CourseID"></property>
+        <property name="LastName"></property>
+        <property name="MiddleName"></property>
+        <property name="Street2"></property>
+        <property name="CityID"></property>
+        <property name="StateID"></property>
+        <property name="CountryID"></property>
+        <property name="PINCode"></property>
+        <property name="HowComeToKnow"></property>
+        <property name="CourseLevelID"></property>
+        <property name="CoachingModeID"></property>
+        <property name="BatchID"></property>
+        <property name="Qualification"></property>
+        <property name="BestTimeToCall"></property>
+        <property name="CounselorID"></property>
+        <property name="Status"></property>
+        <property name="ExpectedExamTimeID"></property>
+        <property name="ISPOTENTIAL"></property>
+        
+        <list name="enquirySubjects" table="Enquiry_Subject_TB" inverse="true" lazy="true" cascade="all-delete-orphan">
+			<key column="Enquiry_Subject_Id"/>
+			<list-index column="idx1" base="1"/>
+			<one-to-many class="com.edusmart.dao.Enquiry_Subject_TB" />
+		</list>
+						
+    </class>
+</hibernate-mapping>

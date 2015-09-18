@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 3, 2014 5:28:24 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.ProductSubCategoryMasterTB" table="ProductSubCategoryMasterTB">
+        <id name="ProductSubCategoryId" type="int">
+            <column name="ProductSubCategoryId" />
+            <generator class="increment" />
+        </id>
+        <property name="ProductSubCategoryName" type="java.lang.String">
+            <column name="ProductSubCategoryName" />
+        </property>
+        <property name="Status" type="int">
+            <column name="Status" />
+        </property>
+        <property name="ProductCategoryId" type="int">
+            <column name="ProductCategoryId" />
+        </property>
+         <property name="BranchId" type="int">
+            <column name="BranchId" />
+        </property>
+        <property name="AcademyId" type="int">
+            <column name="AcademyId" />
+        </property>   
+        <property name="OwnerId" type="int" access="field">
+            <column name="OwnerId" />
+        </property>     
+    </class>
+</hibernate-mapping>

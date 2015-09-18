@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 30, 2014 5:20:47 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.BatchMasterTB" table="BATCHMASTERTB">
+        <id name="BatchId" type="int">
+            <column name="BATCHID" />
+            <generator class="increment" />
+        </id>
+        <property name="BranchId" type="int">
+            <column name="BRANCHID" />
+        </property>
+        <property name="CourseID" type="int">
+            <column name="COURSEID" />
+        </property>
+        <property name="BatchName" type="java.lang.String">
+            <column name="BATCHNAME" />
+        </property>
+        <property name="BatchCode" type="java.lang.String">
+            <column name="BATCHCODE" />
+        </property>
+        <property name="NoOfSeat" type="int">
+            <column name="NOOFSEAT" />
+        </property>
+        <property name="BatchStartDate" type="java.lang.String">
+            <column name="BATCHSTARTDATE" />
+        </property>
+        <property name="BatchEndDate" type="java.lang.String">
+            <column name="BATCHENDDATE" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="UserID" type="int">
+            <column name="USERID" />
+        </property>
+    </class>
+</hibernate-mapping>

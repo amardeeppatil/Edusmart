@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 7, 2014 11:29:30 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.CourseSubjectTB" table="COURSESUBJECTTB">
+        <id name="SubjectId" type="int">
+            <column name="SUBJECTID" />
+            <generator class="increment" />
+        </id>
+        <property name="SubjectName" type="java.lang.String">
+            <column name="SUBJECTNAME" />
+        </property>
+        <property name="CourseID" type="int">
+            <column name="COURSEID" />
+        </property>
+        <property name="LevelId" type="int">
+            <column name="LEVELID" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="Duration" type="int">
+            <column name="DURATION" />
+        </property>
+        <property name="UserId" type="int">
+            <column name="USERID" />
+        </property>
+        <property name="BatchId" type="int">
+            <column name="BATCHID" />
+        </property>
+        <property name="ModeId" type="int">
+            <column name="ModeId" />
+        </property>
+    </class>
+</hibernate-mapping>

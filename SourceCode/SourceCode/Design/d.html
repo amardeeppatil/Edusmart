@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta charset="utf-8">
+
+<title>bootstrap-wysihtml5</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+<link rel="stylesheet" type="text/css" href="css/prettify.css"></link>
+<link rel="stylesheet" type="text/css" href="css/bootstrap-wysihtml5.css"></link>
+
+<style type="text/css" media="screen">
+	.btn.jumbo {
+		font-size: 20px;
+		font-weight: normal;
+		padding: 14px 24px;
+		margin-right: 10px;
+		-webkit-border-radius: 6px;
+		-moz-border-radius: 6px;
+		border-radius: 6px;
+	}
+</style>
+
+
+</head>
+<body>
+<div class="container">
+	<div class="hero-unit" style="margin-top:40px">
+		<h1 style="font-size:58px"><small>Simple, beautiful wysiwyg editors</small></h1>
+		<hr/>
+		<textarea class="textarea" placeholder="Enter text ..."></textarea>
+	</div>
+	
+	
+</div>
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/wysihtml5-0.3.0.js"></script>
+
+<script src="js/prettify.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-wysihtml5.js"></script>
+
+<script>
+	$('.textarea').wysihtml5();
+</script>
+
+<script type="text/javascript" charset="utf-8">
+	$(prettyPrint);
+</script>
+
+</body>
+</html>

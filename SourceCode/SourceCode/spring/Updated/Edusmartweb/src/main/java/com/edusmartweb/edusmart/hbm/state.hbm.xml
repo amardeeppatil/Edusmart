@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Jun 24, 2014 3:49:18 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+
+	<class name="com.edusmart.dao.StateTB" table="STATETB">
+
+		<id name="Stateid" type="int">
+			<column name="STATEID" />
+			<generator class="increment" />
+		</id>
+
+		<property name="StateName" type="java.lang.String">
+			<column name="STATENAME" />
+		</property>
+
+		<property name="StateCode" type="java.lang.String">
+			<column name="STATECODE" />
+		</property>
+
+		<property name="CountryId" type="java.lang.String">
+			<column name="COUNTRYID" />
+		</property>
+
+		<property name="User_ID" type="int">
+			<column name="USER_ID" />
+		</property>
+		
+		<property name="Status" type="int">
+			<column name="STATUS" />
+		</property>
+	</class>
+
+</hibernate-mapping>

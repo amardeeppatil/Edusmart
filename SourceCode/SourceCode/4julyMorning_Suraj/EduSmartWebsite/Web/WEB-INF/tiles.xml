@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="baselayoutAcademy" template="/academyCommon/baselayoutAcademy.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="academyheader" value="/academyCommon/academyheader.jsp" />
+		<put-attribute name="header2" value="/baselayout/header2.jsp" />
+		<put-attribute name="cover-banner" value="/cover-banner.jsp" />
+		<put-attribute name="left-panel" value="/left-panel.jsp" />
+		<put-attribute name="body" value="/academyCommon/academyhome.jsp" />
+		<put-attribute name="right-panel" value="/academyCommon/right-panel.jsp" />
+		<!-- <put-attribute name="advertisment" value="/advertisment.html" /> -->
+		<put-attribute name="academyfooter" value="/academyCommon/academyfooter.jsp" />
+	</definition>
+	
+	<definition name="baselayout" template="/baselayout/baselayout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="header" value="/baselayout/header.jsp" />
+		<put-attribute name="header2" value="/baselayout/header2.jsp" />
+		<put-attribute name="body" value="/website/home.jsp" />
+		
+		<put-attribute name="footer" value="/commonPages/footer.jsp" />
+	</definition>
+	
+	<definition name="baselayoutDemo" template="/baselayout/baselayoutDemo.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="academyheader" value="/academyCommon/academyheader.jsp" />
+		<put-attribute name="header2" value="/baselayout/header2.jsp" />
+		<put-attribute name="cover-banner" value="/cover-banner.jsp" />
+		
+		
+		<put-attribute name="body" value="/website/news/news.jsp" />
+		<put-attribute name="right-panel" value="/website/news/news_right_panel.jsp" />
+		<!-- <put-attribute name="advertisment" value="/advertisment.html" /> -->
+		<put-attribute name="academyfooter" value="/academyCommon/academyfooter.jsp" />
+	</definition>
+	
+	<definition name="baselayoutEvent" template="/baselayout/baselayoutDemo.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="academyheader" value="/academyCommon/academyheader.jsp" />
+		<put-attribute name="header2" value="/baselayout/header2.jsp" />
+		<put-attribute name="cover-banner" value="/cover-banner.jsp" />
+		
+		
+		<put-attribute name="body" value="/website/news/event.jsp" />
+		<put-attribute name="right-panel" value="/website/news/news_right_panel.jsp" />
+		<!-- <put-attribute name="advertisment" value="/advertisment.html" /> -->
+		<put-attribute name="academyfooter" value="/academyCommon/academyfooter.jsp" />
+	</definition>
+
+	<definition name="eventTiles" extends="baselayoutEvent">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/website/news/event.jsp" />
+	</definition>
+	
+	<definition name="home" extends="baselayout">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="body" value="/website/home.jsp" />
+	</definition>
+	
+	<definition name="search_engine" extends="baselayout">
+		<put-attribute name="title" value="SearchEngine" />
+		<put-attribute name="body" value="/website/search_engine/search_engine.jsp" />
+	</definition>
+	
+	<definition name="facultyProfile" extends="baselayoutAcademy">
+		<put-attribute name="title" value="FacultyProfile" />
+		<put-attribute name="body" value="/website/profile/faculty_profile.jsp" />
+	</definition>	
+	
+	<definition name="addAcademyAccount" extends="baselayoutAcademy">
+		<put-attribute name="title" value="registration" />
+		<put-attribute name="body" value="/registration.jsp" />
+	</definition>
+	
+	<definition name="academyProfile" extends="baselayoutAcademy">
+		<put-attribute name="title" value="AcademyProfile" />
+		<put-attribute name="body" value="/website/academy/academyprofile.jsp" />
+	</definition>
+	
+	
+	<!--faculty List-->
+	<definition name="facultylist" extends="baselayout">
+		<put-attribute name="title" value="FacultyList" />
+		<put-attribute name="body" value="/website/profile/faculty.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="facultyProducts" extends="baselayout">
+		<put-attribute name="title" value="FacultyProducts" />
+		<put-attribute name="body" value="products.jsp" />
+	</definition>
+	
+	<definition name="viewCart" extends="baselayout">
+		<put-attribute name="title" value="FacultyProducts" />
+		<put-attribute name="body" value="/website/cart/view_cart.jsp" />
+	</definition>
+	
+	<!--Center List -->
+	<definition name="centerlist" extends="baselayout">
+		<put-attribute name="title" value="Centerlist" />
+		<put-attribute name="body" value="/website/center/center.jsp" />
+	</definition>
+	
+	<!--Add News  -->
+	<definition name="addnews" extends="baselayout">
+		<put-attribute name="title" value="addnews" />
+		<put-attribute name="body" value="/website/news/news.jsp" />
+	</definition>
+		
+	<!--News List -->
+	<definition name="newslist" extends="baselayout">
+		<put-attribute name="title" value="newslist" />
+		<put-attribute name="body" value="/website/news/news.jsp" />
+	</definition>
+	
+	<definition name="show" extends="baselayoutDemo">
+		<put-attribute name="title" value="news" />
+		<put-attribute name="body" value="/website/news/news.jsp" />
+	</definition>
+	
+	<!-- Aboutus on left side bar of academy -->
+	<definition name="about" extends="baselayout">
+		<put-attribute name="title" value="about" />
+		<put-attribute name="body" value="/website/about/about.jsp" />
+	</definition>
+	
+	<!--for About page display  -->
+	<definition name="aboutPage" extends="baselayoutAbout">
+		<put-attribute name="title" value="aboutPage" />
+		<put-attribute name="body" value="/website/about/about.jsp" />
+	</definition>
+	
+	<!--notification  -->
+	<definition name="viewAllNotification" extends="baselayoutAbout">
+		<put-attribute name="title" value="aboutPage" />
+		<put-attribute name="body" value="/website/notification/notification.jsp" />
+	</definition>
+	
+	<!--End Notification  -->
+	
+	<!--For About Page  -->
+	<definition name="baselayoutAbout" template="/website/about/baselayoutAbout.jsp">
+		<put-attribute name="title" value="Template" />
+		<put-attribute name="academyheader" value="/academyCommon/academyheader.jsp" />
+		<put-attribute name="header2" value="/baselayout/header2.jsp" />
+		<put-attribute name="cover-banner" value="/cover-banner.jsp" />
+		<put-attribute name="body" value="/website/about/about.jsp" />
+		<put-attribute name="right-panel" value="/website/about/about_right_panel.jsp" />
+		<put-attribute name="academyfooter" value="/academyCommon/academyfooter.jsp" />
+	</definition>
+	
+	
+	
+	
+	
+</tiles-definitions>

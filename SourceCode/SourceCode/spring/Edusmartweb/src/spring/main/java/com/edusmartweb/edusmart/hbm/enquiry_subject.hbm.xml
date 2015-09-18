@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 30, 2014 2:09:01 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.Enquiry_Subject_TB" table="Enquiry_Subject_TB">
+        <id name="Enquiry_Subject_Id" type="int">
+            <generator class="increment" />
+        </id>
+        <property name="CourseSubjectID" type="int"></property>
+        <property name="Branch_id" type="int"></property>
+        <property name="UserID" type="int"></property>
+        <many-to-one name="enquiry" class="com.edusmart.dao.EnquiryTB" fetch="select">
+            <column name="EnquiryID" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

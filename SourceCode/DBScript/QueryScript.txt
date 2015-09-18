@@ -1,0 +1,574 @@
+DROP TABLE IF EXISTS `edusmartweb`.`abouttb`;
+CREATE TABLE  `edusmartweb`.`abouttb` (
+  `aboutId` int(11) NOT NULL AUTO_INCREMENT,
+  `comments` tinyblob,
+  `date` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `likes` varchar(255) DEFAULT NULL,
+  `shareType` varchar(255) DEFAULT NULL,
+  `subTitle` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  `academyTB_AcademyId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`aboutId`),
+  KEY `FK1C03169BA712BB5B` (`userProfileTB_UserId`),
+  KEY `FK1C03169B356CC072` (`academyTB_AcademyId`),
+  CONSTRAINT `FK1C03169B356CC072` FOREIGN KEY (`academyTB_AcademyId`) REFERENCES `academytb` (`AcademyId`),
+  CONSTRAINT `FK1C03169BA712BB5B` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`academytb`;
+CREATE TABLE  `edusmartweb`.`academytb` (
+  `AcademyId` int(11) NOT NULL AUTO_INCREMENT,
+  `AboutInfo` varchar(255) DEFAULT NULL,
+  `AcademyName` varchar(255) DEFAULT NULL,
+  `BankAccountNo` varchar(255) DEFAULT NULL,
+  `BankName` varchar(255) DEFAULT NULL,
+  `Banner` varchar(255) DEFAULT NULL,
+  `City` varchar(255) DEFAULT NULL,
+  `Country` varchar(255) DEFAULT NULL,
+  `EmailId` varchar(255) DEFAULT NULL,
+  `IFSCCode` varchar(255) DEFAULT NULL,
+  `Logo` varchar(255) DEFAULT NULL,
+  `Longitude` varchar(255) DEFAULT NULL,
+  `OwnerFirstName` varchar(255) DEFAULT NULL,
+  `OwnerLastName` varchar(255) DEFAULT NULL,
+  `OwnerMiddleName` varchar(255) DEFAULT NULL,
+  `Phone` varchar(255) DEFAULT NULL,
+  `Pics` varchar(255) DEFAULT NULL,
+  `State` varchar(255) DEFAULT NULL,
+  `Status` int(11) DEFAULT NULL,
+  `Videos` varchar(255) DEFAULT NULL,
+  `Wallpaper` varchar(255) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `lattitude` varchar(255) DEFAULT NULL,
+  `logoImageContentType` varchar(255) DEFAULT NULL,
+  `logoImageFileName` varchar(255) DEFAULT NULL,
+  `saveDirectory` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `establishment` varchar(255) DEFAULT NULL,
+  `objectives` varchar(255) DEFAULT NULL,
+  `tagLine` varchar(255) DEFAULT NULL,
+  `joinDate` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`AcademyId`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`branchtb`;
+CREATE TABLE  `edusmartweb`.`branchtb` (
+  `BranchId` int(11) NOT NULL AUTO_INCREMENT,
+  `Address` varchar(255) DEFAULT NULL,
+  `Address2` varchar(255) DEFAULT NULL,
+  `Branch_Code` varchar(255) DEFAULT NULL,
+  `Branchname` varchar(255) DEFAULT NULL,
+  `ContactNo` varchar(255) DEFAULT NULL,
+  `CountryID` varchar(255) DEFAULT NULL,
+  `EmailID` varchar(255) DEFAULT NULL,
+  `PinCode` varchar(255) DEFAULT NULL,
+  `State` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `Town` varchar(255) DEFAULT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`BranchId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`callstatusmastertb`;
+CREATE TABLE  `edusmartweb`.`callstatusmastertb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `BranchId` int(11) NOT NULL,
+  `CallStatus` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`city`;
+CREATE TABLE  `edusmartweb`.`city` (
+  `CityId` int(11) NOT NULL AUTO_INCREMENT,
+  `CityName` varchar(255) DEFAULT NULL,
+  `CountryID` int(11) NOT NULL,
+  `StateId` int(11) NOT NULL,
+  `Status` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL,
+  `_countryId` varchar(255) DEFAULT NULL,
+  `_stateId` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`CityId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`commentliketb`;
+CREATE TABLE  `edusmartweb`.`commentliketb` (
+  `commentId` int(11) NOT NULL AUTO_INCREMENT,
+  `CommentBy` varchar(255) DEFAULT NULL,
+  `CommentById` int(11) DEFAULT NULL,
+  `commentContent` varchar(255) DEFAULT NULL,
+  `commentDate` varchar(255) DEFAULT NULL,
+  `likeById` int(11) DEFAULT NULL,
+  `likeCount` int(11) DEFAULT NULL,
+  `likeby` varchar(255) DEFAULT NULL,
+  `eventId` int(11) DEFAULT NULL,
+  `newsId` int(11) DEFAULT NULL,
+  `aboutId` int(11) DEFAULT NULL,
+  `likeByIdList` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`commentId`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`countrytb`;
+CREATE TABLE  `edusmartweb`.`countrytb` (
+  `CountryID` int(11) NOT NULL AUTO_INCREMENT,
+  `ContinentID` int(11) NOT NULL,
+  `CountryCode` varchar(255) DEFAULT NULL,
+  `CountryName` varchar(255) DEFAULT NULL,
+  `DialCode` int(11) NOT NULL,
+  `Status` int(11) NOT NULL,
+  PRIMARY KEY (`CountryID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`coursesubjecttb`;
+CREATE TABLE  `edusmartweb`.`coursesubjecttb` (
+  `SubjectId` int(11) NOT NULL AUTO_INCREMENT,
+  `BatchId` int(11) NOT NULL,
+  `CourseID` int(11) NOT NULL,
+  `Duration` int(11) NOT NULL,
+  `LevelId` int(11) NOT NULL,
+  `ModeId` int(11) NOT NULL,
+  `Status` int(11) NOT NULL,
+  `SubjectName` varchar(255) DEFAULT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`SubjectId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`coursetb`;
+CREATE TABLE  `edusmartweb`.`coursetb` (
+  `courseId` int(11) NOT NULL AUTO_INCREMENT,
+  `courseName` varchar(255) DEFAULT NULL,
+  `facultyTb_facultyId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`courseId`),
+  KEY `FKEDE5B3E9C951507E` (`facultyTb_facultyId`),
+  CONSTRAINT `FKEDE5B3E9C951507E` FOREIGN KEY (`facultyTb_facultyId`) REFERENCES `facultytb` (`facultyId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`educationmastertb`;
+CREATE TABLE  `edusmartweb`.`educationmastertb` (
+  `EducationId` int(11) NOT NULL AUTO_INCREMENT,
+  `EducationName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  PRIMARY KEY (`EducationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`enquiry_subject_tb`;
+CREATE TABLE  `edusmartweb`.`enquiry_subject_tb` (
+  `Enquiry_Subject_Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Branch_id` int(11) NOT NULL,
+  `CourseSubjectID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `enquiry` tinyblob,
+  PRIMARY KEY (`Enquiry_Subject_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`enquiryassigntb`;
+CREATE TABLE  `edusmartweb`.`enquiryassigntb` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `AssignDate` varchar(255) DEFAULT NULL,
+  `AssignedBy` int(11) NOT NULL,
+  `EMPENQSTATUS` varchar(255) DEFAULT NULL,
+  `EmpId` int(11) NOT NULL,
+  `Status` int(11) NOT NULL,
+  `enquiry` tinyblob,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`enquiryfollowuptb`;
+CREATE TABLE  `edusmartweb`.`enquiryfollowuptb` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `CallStatus` varchar(255) DEFAULT NULL,
+  `EMPID` int(11) NOT NULL,
+  `Enquiryid` int(11) NOT NULL,
+  `FolUpStatus` int(11) NOT NULL,
+  `FollowUpDate` varchar(255) DEFAULT NULL,
+  `Note` varchar(255) DEFAULT NULL,
+  `TodaysDay` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`eventstb`;
+CREATE TABLE  `edusmartweb`.`eventstb` (
+  `EventId` int(11) NOT NULL AUTO_INCREMENT,
+  `Status` int(11) NOT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `entryBy` varchar(255) DEFAULT NULL,
+  `entryDate` varchar(255) DEFAULT NULL,
+  `eventContent` varchar(255) DEFAULT NULL,
+  `expDate` varchar(255) DEFAULT NULL,
+  `expired` int(11) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `shareWith` varchar(255) DEFAULT NULL,
+  `subTitle` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`EventId`),
+  KEY `FK146E6D67A712BB5B` (`userProfileTB_UserId`),
+  CONSTRAINT `FK146E6D67A712BB5B` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`examtermtb`;
+CREATE TABLE  `edusmartweb`.`examtermtb` (
+  `ExamTermId` int(11) NOT NULL AUTO_INCREMENT,
+  `BranchId` int(11) NOT NULL,
+  `ExamTermName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  PRIMARY KEY (`ExamTermId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`faculty`;
+CREATE TABLE  `edusmartweb`.`faculty` (
+  `FacultyId` int(11) NOT NULL AUTO_INCREMENT,
+  `AutoOrManual` int(11) NOT NULL,
+  `BloodGroup` varchar(255) DEFAULT NULL,
+  `BranchId` int(11) NOT NULL,
+  `CAddress1` varchar(255) DEFAULT NULL,
+  `CAddress2` varchar(255) DEFAULT NULL,
+  `CCity` varchar(255) DEFAULT NULL,
+  `CCountry` int(11) NOT NULL,
+  `CPincode` int(11) NOT NULL,
+  `CState` int(11) NOT NULL,
+  `Contact` varchar(255) DEFAULT NULL,
+  `DOB` varchar(255) DEFAULT NULL,
+  `EContact` varchar(255) DEFAULT NULL,
+  `EEmail` varchar(255) DEFAULT NULL,
+  `EFName` varchar(255) DEFAULT NULL,
+  `ELName` varchar(255) DEFAULT NULL,
+  `EMName` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `EntryDate` varchar(255) DEFAULT NULL,
+  `FName` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `Image` varchar(255) DEFAULT NULL,
+  `IsProfileUpdated` int(11) NOT NULL,
+  `LName` varchar(255) DEFAULT NULL,
+  `MName` varchar(255) DEFAULT NULL,
+  `PAddress1` varchar(255) DEFAULT NULL,
+  `PAddress2` varchar(255) DEFAULT NULL,
+  `PCity` varchar(255) DEFAULT NULL,
+  `PCountry` int(11) NOT NULL,
+  `PPincode` int(11) NOT NULL,
+  `PState` int(11) NOT NULL,
+  `Password` varchar(255) DEFAULT NULL,
+  `Relationship` varchar(255) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `UserCode` varchar(255) DEFAULT NULL,
+  `UserName` varchar(255) DEFAULT NULL,
+  `UserType` int(11) NOT NULL,
+  `Academy_AcademyId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`FacultyId`),
+  KEY `FK22243244921BAE84` (`Academy_AcademyId`),
+  CONSTRAINT `FK22243244921BAE84` FOREIGN KEY (`Academy_AcademyId`) REFERENCES `academytb` (`AcademyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`faculty_course`;
+CREATE TABLE  `edusmartweb`.`faculty_course` (
+  `Course_ID` int(11) NOT NULL,
+  `Faculty_ID` int(11) NOT NULL,
+  PRIMARY KEY (`Course_ID`,`Faculty_ID`),
+  KEY `FK9A074296880C5E0E` (`Course_ID`),
+  KEY `FK9A074296DB784302` (`Faculty_ID`),
+  CONSTRAINT `FK9A074296DB784302` FOREIGN KEY (`Faculty_ID`) REFERENCES `facultytb` (`facultyId`),
+  CONSTRAINT `FK9A074296880C5E0E` FOREIGN KEY (`Course_ID`) REFERENCES `coursetb` (`courseId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`facultytb`;
+CREATE TABLE  `edusmartweb`.`facultytb` (
+  `facultyId` int(11) NOT NULL AUTO_INCREMENT,
+  `city` varchar(255) DEFAULT NULL,
+  `course` varchar(255) DEFAULT NULL,
+  `displayName` varchar(255) DEFAULT NULL,
+  `level` varchar(255) DEFAULT NULL,
+  `licensNo` varchar(255) DEFAULT NULL,
+  `officialContact` varchar(255) DEFAULT NULL,
+  `officialMail` varchar(255) DEFAULT NULL,
+  `registrtionDate` varchar(255) DEFAULT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `EntryDate` varchar(255) DEFAULT NULL,
+  `Academy_AcademyId` int(11) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`facultyId`),
+  KEY `FK29E0BBD2F2D7E6DF` (`userProfileTB_UserId`),
+  KEY `FK29E0BBD2332B3C08` (`Academy_AcademyId`),
+  CONSTRAINT `FK29E0BBD2332B3C08` FOREIGN KEY (`Academy_AcademyId`) REFERENCES `academytb` (`AcademyId`),
+  CONSTRAINT `FK29E0BBD2F2D7E6DF` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`facultytb_coursetb`;
+CREATE TABLE  `edusmartweb`.`facultytb_coursetb` (
+  `FacultyTb_facultyId` int(11) NOT NULL,
+  `courseTBset_courseId` int(11) NOT NULL,
+  PRIMARY KEY (`FacultyTb_facultyId`,`courseTBset_courseId`),
+  KEY `FKEF4B55B6F5F40A4B` (`courseTBset_courseId`),
+  KEY `FKEF4B55B6C951507E` (`FacultyTb_facultyId`),
+  CONSTRAINT `FKEF4B55B6C951507E` FOREIGN KEY (`FacultyTb_facultyId`) REFERENCES `facultytb` (`facultyId`),
+  CONSTRAINT `FKEF4B55B6F5F40A4B` FOREIGN KEY (`courseTBset_courseId`) REFERENCES `coursetb` (`courseId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`facultytb_subjectleveltb`;
+CREATE TABLE  `edusmartweb`.`facultytb_subjectleveltb` (
+  `FacultyTb_facultyId` int(11) NOT NULL,
+  `subjectLevelTBset_subjectId` int(11) NOT NULL,
+  PRIMARY KEY (`FacultyTb_facultyId`,`subjectLevelTBset_subjectId`),
+  KEY `FKCF9E4E53528A9B50` (`subjectLevelTBset_subjectId`),
+  KEY `FKCF9E4E53C951507E` (`FacultyTb_facultyId`),
+  CONSTRAINT `FKCF9E4E53C951507E` FOREIGN KEY (`FacultyTb_facultyId`) REFERENCES `facultytb` (`facultyId`),
+  CONSTRAINT `FKCF9E4E53528A9B50` FOREIGN KEY (`subjectLevelTBset_subjectId`) REFERENCES `subjectleveltb` (`subjectId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`holiday`;
+CREATE TABLE  `edusmartweb`.`holiday` (
+  `HolidayId` int(11) NOT NULL AUTO_INCREMENT,
+  `HolidayDate` varchar(255) DEFAULT NULL,
+  `HolidayName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL,
+  PRIMARY KEY (`HolidayId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`levelofstudytb`;
+CREATE TABLE  `edusmartweb`.`levelofstudytb` (
+  `LevelId` int(11) NOT NULL AUTO_INCREMENT,
+  `CourseId` int(11) NOT NULL,
+  `LevelName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`LevelId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`mediasourcemastertb`;
+CREATE TABLE  `edusmartweb`.`mediasourcemastertb` (
+  `MediaId` int(11) NOT NULL AUTO_INCREMENT,
+  `BranchId` int(11) NOT NULL,
+  `MediaName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`MediaId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`messagetb`;
+CREATE TABLE  `edusmartweb`.`messagetb` (
+  `messageId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `to` varchar(255) DEFAULT NULL,
+  `from` varchar(255) DEFAULT NULL,
+  `subject` varchar(255) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`messageId`),
+  KEY `FK219D4495A712BB5B` (`userProfileTB_UserId`),
+  CONSTRAINT `FK219D4495A712BB5B` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`modeofcoachingtb`;
+CREATE TABLE  `edusmartweb`.`modeofcoachingtb` (
+  `ModeId` int(11) NOT NULL AUTO_INCREMENT,
+  `BranchId` int(11) NOT NULL,
+  `ModeName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  PRIMARY KEY (`ModeId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`newstb`;
+CREATE TABLE  `edusmartweb`.`newstb` (
+  `newsId` int(11) NOT NULL AUTO_INCREMENT,
+  `Status` int(11) DEFAULT NULL,
+  `date` varchar(255) DEFAULT NULL,
+  `entryBy` varchar(255) DEFAULT NULL,
+  `entryDate` varchar(255) DEFAULT NULL,
+  `expDate` varchar(255) DEFAULT NULL,
+  `expired` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `newsContent` varchar(255) DEFAULT NULL,
+  `shareWith` varchar(255) DEFAULT NULL,
+  `subTitle` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`newsId`),
+  KEY `FK8AE118A1A712BB5B` (`userProfileTB_UserId`),
+  CONSTRAINT `FK8AE118A1A712BB5B` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`notificationtb`;
+CREATE TABLE  `edusmartweb`.`notificationtb` (
+  `notificationId` int(11) NOT NULL AUTO_INCREMENT,
+  `notificationContent` varchar(255) DEFAULT NULL,
+  `notificationDate` varchar(255) DEFAULT NULL,
+  `userProfileTB_UserId` int(11) DEFAULT NULL,
+  `notificationBy` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`notificationId`),
+  KEY `FKF342D0D9A712BB5B` (`userProfileTB_UserId`),
+  CONSTRAINT `FKF342D0D9A712BB5B` FOREIGN KEY (`userProfileTB_UserId`) REFERENCES `userprofiletb` (`UserId`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`productsubcategorymastertb`;
+CREATE TABLE  `edusmartweb`.`productsubcategorymastertb` (
+  `ProductSubCategoryId` int(11) NOT NULL AUTO_INCREMENT,
+  `AcademyId` int(11) NOT NULL,
+  `BranchId` int(11) NOT NULL,
+  `OwnerId` int(11) NOT NULL,
+  `ProductCategoryId` int(11) NOT NULL,
+  `ProductSubCategoryName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  PRIMARY KEY (`ProductSubCategoryId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`producttb`;
+CREATE TABLE  `edusmartweb`.`producttb` (
+  `ProductId` int(11) NOT NULL AUTO_INCREMENT,
+  `AcademyId` int(11) NOT NULL,
+  `AcademyName` varchar(255) DEFAULT NULL,
+  `BranchId` int(11) NOT NULL,
+  `BranchName` varchar(255) DEFAULT NULL,
+  `Capacity` int(11) NOT NULL,
+  `CityId` int(11) NOT NULL,
+  `CityName` varchar(255) DEFAULT NULL,
+  `CourseId` int(11) NOT NULL,
+  `CourseName` varchar(255) DEFAULT NULL,
+  `Duration` int(11) NOT NULL,
+  `FromTime` varchar(255) DEFAULT NULL,
+  `LevelId` int(11) NOT NULL,
+  `LevelName` varchar(255) DEFAULT NULL,
+  `OwnerId` int(11) NOT NULL,
+  `OwnerName` varchar(255) DEFAULT NULL,
+  `ProductCategoryId` int(11) NOT NULL,
+  `ProductCategoryName` varchar(255) DEFAULT NULL,
+  `ProductName` varchar(255) DEFAULT NULL,
+  `ProductSubCategoryId` int(11) NOT NULL,
+  `ProductSubCategoryName` varchar(255) DEFAULT NULL,
+  `StartDate` varchar(255) DEFAULT NULL,
+  `StateId` int(11) NOT NULL,
+  `StateName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `SubjectId` int(11) NOT NULL,
+  `SubjectName` varchar(255) DEFAULT NULL,
+  `ToTime` varchar(255) DEFAULT NULL,
+  `TuitionFee` double NOT NULL,
+  PRIMARY KEY (`ProductId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`statetb`;
+CREATE TABLE  `edusmartweb`.`statetb` (
+  `Stateid` int(11) NOT NULL AUTO_INCREMENT,
+  `CountryId` varchar(255) DEFAULT NULL,
+  `StateCode` varchar(255) DEFAULT NULL,
+  `StateName` varchar(255) DEFAULT NULL,
+  `Status` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL,
+  PRIMARY KEY (`Stateid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`subjectlevel_faculty`;
+CREATE TABLE  `edusmartweb`.`subjectlevel_faculty` (
+  `subjectId` int(11) NOT NULL,
+  `facultyId` int(11) NOT NULL,
+  PRIMARY KEY (`subjectId`,`facultyId`),
+  KEY `FKEB5E86DDF281D4AB` (`facultyId`),
+  KEY `FKEB5E86DDD79FAF73` (`subjectId`),
+  CONSTRAINT `FKEB5E86DDD79FAF73` FOREIGN KEY (`subjectId`) REFERENCES `subjectleveltb` (`subjectId`),
+  CONSTRAINT `FKEB5E86DDF281D4AB` FOREIGN KEY (`facultyId`) REFERENCES `facultytb` (`facultyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`subjectleveltb`;
+CREATE TABLE  `edusmartweb`.`subjectleveltb` (
+  `subjectId` int(11) NOT NULL AUTO_INCREMENT,
+  `level` varchar(255) DEFAULT NULL,
+  `subjectName` varchar(255) DEFAULT NULL,
+  `courseTB_courseId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`subjectId`),
+  KEY `FK657FA46EFC9E87B` (`courseTB_courseId`),
+  CONSTRAINT `FK657FA46EFC9E87B` FOREIGN KEY (`courseTB_courseId`) REFERENCES `coursetb` (`courseId`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`subjectleveltb_facultytb`;
+CREATE TABLE  `edusmartweb`.`subjectleveltb_facultytb` (
+  `SubjectLevelTB_subjectId` int(11) NOT NULL,
+  `facultyTbset_facultyId` int(11) NOT NULL,
+  PRIMARY KEY (`SubjectLevelTB_subjectId`,`facultyTbset_facultyId`),
+  KEY `FK23D2111977D11E7C` (`facultyTbset_facultyId`),
+  KEY `FK23D21119F9C9A4BA` (`SubjectLevelTB_subjectId`),
+  CONSTRAINT `FK23D21119F9C9A4BA` FOREIGN KEY (`SubjectLevelTB_subjectId`) REFERENCES `subjectleveltb` (`subjectId`),
+  CONSTRAINT `FK23D2111977D11E7C` FOREIGN KEY (`facultyTbset_facultyId`) REFERENCES `facultytb` (`facultyId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`tagstb`;
+CREATE TABLE  `edusmartweb`.`tagstb` (
+  `tagId` int(11) NOT NULL AUTO_INCREMENT,
+  `postId` int(11) NOT NULL,
+  `tagBy` int(11) NOT NULL,
+  `taggedUser` int(11) NOT NULL,
+  PRIMARY KEY (`tagId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `edusmartweb`.`userprofiletb`;
+CREATE TABLE  `edusmartweb`.`userprofiletb` (
+  `UserId` int(11) NOT NULL AUTO_INCREMENT,
+  `AboutInfo` varchar(255) DEFAULT NULL,
+  `AccountNumber` varchar(255) DEFAULT NULL,
+  `AccountType` varchar(255) DEFAULT NULL,
+  `AutoOrManual` int(11) DEFAULT NULL,
+  `BankName` varchar(255) DEFAULT NULL,
+  `BannerImageArray` varchar(255) DEFAULT NULL,
+  `BloodGroup` varchar(255) DEFAULT NULL,
+  `BranchId` int(10) unsigned DEFAULT NULL,
+  `CAddress1` varchar(255) DEFAULT NULL,
+  `CAddress2` varchar(255) DEFAULT NULL,
+  `CCity` varchar(255) DEFAULT NULL,
+  `CCountry` varchar(255) DEFAULT NULL,
+  `CPincode` int(11) DEFAULT NULL,
+  `CState` varchar(255) DEFAULT NULL,
+  `Contact` varchar(255) DEFAULT NULL,
+  `DOB` varchar(255) DEFAULT NULL,
+  `EContact` varchar(255) DEFAULT NULL,
+  `EEmail` varchar(255) DEFAULT NULL,
+  `EFName` varchar(255) DEFAULT NULL,
+  `ELName` varchar(255) DEFAULT NULL,
+  `EMName` varchar(255) DEFAULT NULL,
+  `ERelationship` varchar(255) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  `EntryDate` varchar(255) DEFAULT NULL,
+  `FName` varchar(255) DEFAULT NULL,
+  `Gender` varchar(255) DEFAULT NULL,
+  `IfscCode` varchar(255) DEFAULT NULL,
+  `Image` varchar(255) DEFAULT NULL,
+  `IsProfileUpdated` int(11) DEFAULT NULL,
+  `LName` varchar(255) DEFAULT NULL,
+  `MName` varchar(255) DEFAULT NULL,
+  `PAddress1` varchar(255) DEFAULT NULL,
+  `PAddress2` varchar(255) DEFAULT NULL,
+  `PCity` varchar(255) DEFAULT NULL,
+  `PCountry` int(11) DEFAULT NULL,
+  `PPincode` int(11) DEFAULT NULL,
+  `PState` int(11) DEFAULT NULL,
+  `Password` varchar(255) DEFAULT NULL,
+  `ProfessionalExperience` varchar(255) DEFAULT NULL,
+  `ProfileImage` varchar(255) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL,
+  `UserCode` varchar(255) DEFAULT NULL,
+  `UserName` varchar(255) DEFAULT NULL,
+  `UserType` int(10) unsigned DEFAULT NULL,
+  `WallpaperImageArray` varchar(255) DEFAULT NULL,
+  `Website` varchar(255) DEFAULT NULL,
+  `bannerFileUploadContentType` varchar(255) DEFAULT NULL,
+  `bannerFileUploadFileName` varchar(255) DEFAULT NULL,
+  `profileFileUploadContentType` varchar(255) DEFAULT NULL,
+  `profileFileUploadFileName` varchar(255) DEFAULT NULL,
+  `saveDirectory` varchar(255) DEFAULT NULL,
+  `wallpaperFileUploadContentType` varchar(255) DEFAULT NULL,
+  `wallpaperFileUploadFileName` varchar(255) DEFAULT NULL,
+  `bannerFileUpload` longblob,
+  `profileFileUpload` longblob,
+  `wallpaperFileUpload` longblob,
+  `Academy_AcademyId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`UserId`),
+  KEY `FK68C2462C921BAE84` (`Academy_AcademyId`),
+  CONSTRAINT `FK68C2462C921BAE84` FOREIGN KEY (`Academy_AcademyId`) REFERENCES `academytb` (`AcademyId`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1;

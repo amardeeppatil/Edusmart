@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 3, 2014 5:28:24 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.ProductTB" table="ProductTB">
+        <id name="ProductId" type="int">
+            <column name="ProductId" />
+            <generator class="increment" />
+        </id>
+        <property name="ProductName" type="java.lang.String">
+            <column name="ProductName" />
+        </property>
+        <property name="Status" type="int">
+            <column name="Status" />
+        </property>
+        <property name="ProductCategoryName" type="java.lang.String" access="field">
+            <column name="ProductCategoryName" />
+        </property>
+         <property name="ProductSubCategoryName" type="java.lang.String" access="field">
+            <column name="ProductSubCategoryName" />
+        </property>
+         <property name="BranchName" type="java.lang.String" access="field">
+            <column name="BranchName" />
+        </property>
+        <property name="AcademyName" type="java.lang.String" access="field">
+            <column name="AcademyName" />
+        </property>
+        <property name="OwnerName" type="java.lang.String" access="field">
+            <column name="OwnerName" />
+        </property>
+        <property name="CourseName" type="java.lang.String" access="field">
+            <column name="CourseName" />
+        </property>
+        <property name="LevelName" type="java.lang.String" access="field">
+            <column name="LevelName" />
+        </property>
+        <property name="SubjectName" type="java.lang.String" access="field">
+            <column name="SubjectName" />
+        </property>
+        
+        <property name="Duration" type="int" access="field">
+            <column name="Duration" />
+        </property>
+        <property name="StartDate" type="java.lang.String" access="field">
+            <column name="StartDate" />
+        </property>
+        <property name="FromTime" type="java.lang.String" access="field">
+            <column name="FromTime" />
+        </property>
+        <property name="ToTime" type="java.lang.String" access="field">
+            <column name="ToTime" />
+        </property>
+        <property name="StateName" type="java.lang.String" access="field">
+            <column name="StateName" />
+        </property>
+        <property name="CityName" type="java.lang.String" access="field">
+            <column name="CityName" />
+        </property>
+        <property name="Capacity" type="int" access="field">
+            <column name="Capacity" />
+        </property>
+        <property name="TuitionFee" type="double" access="field">
+            <column name="TuitionFee" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

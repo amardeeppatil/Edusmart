@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.edusmart.dao.FeeStructureTB" table="FeeStructureTB">
+  <id access="field" column="FeeStuctId" name="FeeStuctId" type="int">
+   <generator class="increment"/>
+  </id>
+  <property generated="never" lazy="false" name="FeeStructName" type="string">
+   <column name="FeeStructName"/>
+  </property>
+  <property generated="never" lazy="false" name="Status" type="integer">
+   <column name="Status"/>
+  </property>
+  <property generated="never" lazy="false" name="FeeAmount" type="double">
+   <column name="FeeAmount"/>
+  </property>
+  <property generated="never" lazy="false" name="Discount" type="double">
+   <column name="Discount"/>
+  </property>
+ </class>
+</hibernate-mapping>

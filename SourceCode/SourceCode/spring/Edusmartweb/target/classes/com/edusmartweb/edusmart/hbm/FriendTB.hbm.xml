@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 8, 2015 10:26:04 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.FriendTB" table="FRIENDTB">
+        <id name="friendId" type="int">
+            <column name="FRIENDID" />
+            <generator class="assigned" />
+        </id>
+        <property name="friend1" type="int">
+            <column name="FRIEND1" />
+        </property>
+        <property name="friend2" type="int">
+            <column name="FRIEND2" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="date" type="java.lang.String">
+            <column name="DATE" />
+        </property>
+    </class>
+</hibernate-mapping>

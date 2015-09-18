@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 14, 2014 4:29:49 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.edusmart.dao.EnquiryFollowUpTB" table="ENQUIRYFOLLOWUPTB">
+		<id name="Id" type="int">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="CallStatus" type="java.lang.String">
+			<column name="CALLSTATUS" />
+		</property>
+		<property name="FollowUpDate" type="java.lang.String">
+			<column name="FOLLOWUPDATE" />
+		</property>
+		<property name="TodaysDay" type="java.lang.String">
+			<column name="TODAYSDAY" />
+		</property>
+		<property name="Note" type="java.lang.String">
+			<column name="NOTE" />
+		</property>
+		<property name="FolUpStatus" type="int">
+			<column name="STATUS" />
+		</property>
+		<property name="Enquiryid" type="int">
+			<column name="ENQUIRYID" />
+		</property>
+		<property name="EMPID" type="int">
+			<column name="EMPID" />
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,55 @@
+Today's Client call
+
+Demo on following
+1. Login 
+	a) Academy Login
+	b) Faculty Login
+
+2. Search functionality(for Faculty Module)
+3. About(for Faculty Module)
+	a) Description
+	    a.1)Add Description
+		a.2)Display Description
+		a.3)Edit Description
+		a.4)Reset Description
+		a.5)Delete Description
+	b) Info
+		b.1)Display Info
+		b.2)Edit long description
+		b.3)Save long description
+		b.4)Edit Address
+		b.5)Save Address
+4. Display Faculty Message
+5. Display Faculty Notification
+
+Suggestions from client :-
+
+1) Search by productId(to identify how many students having that product) 
+2)  About(for Faculty Module)
+	a) Info
+	   fields those are not applicable for faculty make them hidden.
+	   keep the "Vision/Objective" field for faculty.
+	   
+Priority :-
+1) Product Process flow
+2) Add faculty(Send Request to the centre)
+3) Add centre (Send Request to the faculty)
+
+
+
+
+Design-
+
+1) Faculty classes page-
+	1.Remove total admission icon (live classes and regular classes)
+
+2) faculty-
+	1. Cart icon tooltip change (product previre replace with Classes preview)   
+
+3)Academy classes page-
+	1. Add offer icon and add "Add to cart" button
+	2. Add radio buttons in batch timing
+
+4) Design academy cart view page
+
+	

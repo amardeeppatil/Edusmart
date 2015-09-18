@@ -1,0 +1,110 @@
+/*
+ * SmartTab plugin v2.0
+ * jQuery Tab Control Plugin
+ * 
+ * by Dipu Raj
+ * http://techlaboratory.net/smarttab
+ * 
+ * License 
+ * http://creativecommons.org/licenses/by-sa/3.0/  
+ */
+.stMain {
+  display:block;
+  margin:0;
+  padding:0;
+  color: #666666;
+ 
+  font-family: "Segoe UI",Tahoma,arial,sans-serif;
+  font-size: 100%;
+/*  width:900px;*/
+}
+.stContainer {
+  display:block;
+  margin:0;
+  padding:0;
+ 
+/*  height:450px;*/
+  overflow:hidden;  
+  position: relative;
+  min-height: 450px;
+}
+.stMain div.tabContent { 
+  display:block;
+  position: absolute;
+  margin:0;  
+  padding:10px;     
+  width:100%;
+  background-color: #FFF;
+  text-align:left;
+}
+.stMain ul.tabAnchor {
+  display: inline-block;
+  list-style-type: none;
+  position:relative;
+  padding:0;
+  margin:0;    
+  padding-left: 10px;
+  clear: both;
+  margin-bottom: -1px;
+  z-index: 0;
+}
+.stMain ul.tabAnchor li{ 
+  position: relative; 
+  margin-right:20px;
+  padding: 0;
+  float: left;
+}
+.stMain ul.tabAnchor li a { 
+  display:block;
+  margin:0;
+  margin-right: -10px;
+  padding:7px;  
+ 
+  /*width:200px;*/
+  font-size: 14px;
+
+  text-decoration: none;
+  outline-style:none;
+  border: 1px solid #D4D4D4;
+                                          
+}
+.stMain ul.tabAnchor li a small {
+  font-size:15px;
+}
+.stMain ul.tabAnchor li a:hover {
+  color:#FFF;
+ /* background: #00A7DB;*/
+}
+.stMain ul.tabAnchor li a.sel {
+  
+  border-bottom-color: #FFF;
+  cursor:text;
+}
+.loader{
+  position: absolute;
+  left:48%;
+  top:40%;
+  display:block;
+  margin:0;
+  padding:5px; 
+  padding-top: 35px;
+  font-size: 10px;
+  color:#666;
+  text-decoration: none;
+  outline-style:none;
+  border: 1px solid #D4D4D4;
+  background: #f6f6f6 url(../images/loader.gif) no-repeat 10px 10px ;
+}
+a.stLinks { 
+  margin:0;
+  padding:5px;
+  color:#666;
+  text-decoration: none;
+  outline-style:none;
+  border: 1px solid #D4D4D4;
+/*  background-color: #f6f6f6;*/
+ }
+a.stLinks:hover {
+  color:#FFF;
+/*  background-color: #00A7DB;*/
+}

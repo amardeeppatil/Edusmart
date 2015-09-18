@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="connection.url">jdbc:sqlserver://sql.excellenceserver.com;databaseName=EduSmart</property>
+		<property name="connection.username">mssql</property>
+		<property name="connection.password">sqlp@ssw0rd</property>
+		<property name="connection.pool_size">1</property>
+		<property name="current_session_context_class">thread</property>
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+		<property name="show_sql">false</property>
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		
+		<mapping resource="com/edusmart/hbm/city.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/country.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/state.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/branch.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/holiday.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/course.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/level.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/mode.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/course_subject.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/media.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/enquiry.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/enquiry_subject.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/education.hbm.xml"/>
+  		<mapping resource="com/edusmart/hbm/enquiryassign.hbm.xml"/>
+  		<mapping resource="com/edusmart/hbm/callstatus.hbm.xml"/>
+  		<mapping resource="com/edusmart/hbm/enquiryfollow.hbm.xml"/>
+  		<mapping resource="com/edusmart/hbm/exam_term.hbm.xml"/>
+		<mapping resource="com/edusmart/hbm/academy.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/userprofile.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/product.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/product_category.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/product_subcategory.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/Faculty.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/NewsTB.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/PostTB.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/EventsTB.hbm.xml" />
+		<mapping resource="com/edusmart/hbm/TagsTB.hbm.xml" />  
+		
+	</session-factory>
+
+</hibernate-configuration>

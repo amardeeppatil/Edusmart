@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.edusmart.dao.BranchTB" table="BRANCHTB">
+        <id name="BranchId" type="int" column="BranchId" access="field">
+            <generator class="increment" />
+        </id>
+        <property name="UserId">
+        </property>
+        <property name="Branchname">
+            <column name="BRANCHNAME" />
+        </property>
+        <property name="Branch_Code" type="java.lang.String">
+            <column name="BRANCH_CODE" />
+        </property>
+        <property name="Address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="Address2" type="java.lang.String">
+            <column name="ADDRESS2" />
+        </property>
+        <property name="CountryID" type="java.lang.String">
+            <column name="CountryID" />
+        </property>
+        <property name="Town" type="java.lang.String">
+            <column name="TOWN" />
+        </property>
+        <property name="PinCode" type="java.lang.String">
+            <column name="PINCODE" />
+        </property>
+        <property name="ContactNo" type="java.lang.String">
+            <column name="CONTACTNO" />
+        </property>
+        <property name="EmailID" type="java.lang.String">
+            <column name="EMAILID" />
+        </property>
+        <property name="Status" type="int">
+            <column name="STATUS" />
+        </property>
+        <property name="State"  type="java.lang.String">
+            <column name="STATE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<!-- <constant name="struts.serve.static" value="true" /> -->
+	<constant name="struts.multipart.maxSize" value="20971520" /> <!-- 20MB -->
+	
+	<package name="default" extends="struts-default,json-default" namespace="/">
+	    
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<interceptors>
+			<interceptor name="authentication" class="com.edusmart.interceptors.AuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="authentication"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- <default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="login" type="redirect">/login.action</result>
+		</global-results> -->
+		
+		<action name="login" class="com.edusmart.action.UserLoginAction">
+		  
+		    <result name="home" type="redirect">home</result>
+			<result name="success" type="redirect">academyProfile</result>
+			<result name="student" type="redirect">centerProfile.jsp</result>
+			<result name="incompleteProfile" type="redirect">facultyProfile</result>
+			<result name="error">login.jsp</result>
+		</action>	
+			
+		<action name="logout" class="com.edusmart.action.UserLoginAction" method="logout">
+			<result name="success" type="redirect">home</result>
+		</action>
+		<action name="home" method="displayHome" class="com.edusmart.action.WelcomeAction">
+			<result name="success" type="tiles">home</result>
+		</action>
+		
+		<!-- Academy start -->
+		
+		<!-- To Displaying AcademyProfile Page -->
+		<action name="academyProfile" method="viewAcademyProfile" class="com.edusmart.action.AcademyProfileAction">
+			<result name="success" type="tiles">academyProfile</result>
+		</action>
+		
+		<action name="saveDescription" class="com.edusmart.action.FacultyAction" method="saveDescription">
+		<result name="success">academyProfile</result>
+		</action>
+		
+		<!-- Academy Profile Action -->
+		<action name="addAcademyAccount" class="com.edusmart.action.AcademyAccountAction" method="saveOrUpdateAcademyAccount">
+		<result name="success">success.jsp</result>
+		</action>
+		
+		
+		<action name="getAcademyProfileAbout" class="com.edusmart.action.AcademyProfileAction" method="getAcademyProfileAbout">
+			<result name="success">/website/academy/academy_profile_about.jsp</result>
+		</action>
+		<action name="updateAcademyProfile" class="com.edusmart.action.AcademyProfileAction" method="updateAcademyProfile">
+			<result name="success">/website/academy/update_academy_profile_about.jsp</result>
+			<result name="about">/website/academy/update_academy_profile_about.jsp</result>
+			<result name="address">/website/academy/update_academy_profile_address.jsp</result>
+			<result name="contact">/website/academy/update_academy_profile_contact.jsp</result>
+			<result name="emergency">/website/academy/update_academy_profile_emergency.jsp</result>
+			<result name="professional">/website/academy/update_academy_profile_professional.jsp</result>
+			<result name="bank">/website/academy/update_academy_profile_bank_details.jsp</result>
+		</action>
+		<action name="updateOrSaveAcademyProfile" class="com.edusmart.action.AcademyProfileAction" method="updateOrSaveAcademyProfile">
+			<!-- <param name="saveDirectory">D:/Ajinky/Java Workspace/EduSmart Worksapce/EduSmartWebsite/Web/Upload</param> -->
+			<param name="saveDirectory">D:/EduSmartWebsite/Web/Upload</param>
+			<interceptor-ref name="fileUpload">
+        		<param name="maximumSize">4194304</param>
+        		<param name="allowedTypes">
+           	 		image/png,image/gif,image/jpeg,image/pjpeg
+        		</param>
+    		</interceptor-ref>
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">academyProfile</result>
+		</action>
+		
+		<!--For Faculty List on Academy Timeline  -->
+		<action name="facultylist" method="getAllFaculties" class="com.edusmart.action.AcademyAction">
+			<result name="success" type="tiles">facultylist</result>
+		</action>
+		
+		<!--For Center List on Academy Timeline  -->
+		<action name="centerlist" method="getAllCenters" class="com.edusmart.action.AcademyAction">
+			<result name="success" type="tiles">centerlist</result>
+		</action>
+		
+		<action name="about" method="getAboutus" class="com.edusmart.action.AcademyAction">
+			<result name="success" type="tiles">about</result>
+		</action>
+		
+		<!-- for news List on Academy timeline-->
+		<action name="newslist" method="getAllNews" class="com.edusmart.action.AcademyAction">
+			<result name="success" type="tiles">newslist</result>
+		</action>
+		
+		<!-- <action name="addNewProduct" method="getAllProducts" class="com.edusmart.action.ProductAction">
+			<result name="success">/website/product/new_product.jsp</result>
+		</action>	
+		
+		<action name="getFacultyProfileProducts" class="com.edusmart.action.FacultyProfileAction" method="getFacultyProfileProducts">
+			<result name="success">/website/products/faculty_profile_products.jsp</result>
+		</action>
+		<action name="getFacultyProfileProducts" class="com.edusmart.action.FacultyProfileAction" method="getFacultyProfileProducts">
+			<result name="success">/website/products/faculty_profile_products.jsp</result>
+		</action> -->
+		
+		<!-- Academy End -->
+		
+		
+		
+		<!-- To Displaying Profile Page -->
+		<action name="facultyProfile" method="viewFacultyProfile" class="com.edusmart.action.FacultyProfileAction">
+			<result name="success" type="tiles">facultyProfile</result>
+		</action>
+		
+		<!-- Search Engine Action -->
+		<action name="search_engine" method="viewSearchEngine" class="com.edusmart.action.SearchEngineAction">
+			<result name="success" type="tiles">search_engine</result>
+		</action>
+		<action name="getSearchEngineTable" method="getSearchEngineTable" class="com.edusmart.action.SearchEngineAction">
+			<result name="success">/website/search_engine/search_engine_table.jsp</result>
+		</action>
+		
+		<action name="searchDatabase" class="com.edusmart.action.SearchEngineAction" method="searchDatabase">
+			<result type="json"></result>
+		</action>
+		
+		<!-- Faculty Profile Action -->
+		<action name="getFacultyProfileAbout" class="com.edusmart.action.FacultyProfileAction" method="getFacultyProfileAbout">
+			<result name="success">/website/profile/faculty_profile_about.jsp</result>
+		</action>
+		<action name="updateFacultyProfile" class="com.edusmart.action.FacultyProfileAction" method="updateFacultyProfile">
+			<result name="success">/website/profile/update_faculty_profile_about.jsp</result>
+			<result name="about">/website/profile/update_faculty_profile_about.jsp</result>
+			<result name="address">/website/profile/update_faculty_profile_address.jsp</result>
+			<result name="contact">/website/profile/update_faculty_profile_contact.jsp</result>
+			<result name="emergency">/website/profile/update_faculty_profile_emergency.jsp</result>
+			<result name="professional">/website/profile/update_faculty_profile_professional.jsp</result>
+			<result name="bank">/website/profile/update_faculty_profile_bank_details.jsp</result>
+		</action>
+		<action name="updateOrSaveFacultyProfile" class="com.edusmart.action.FacultyProfileAction" method="updateOrSaveFacultyProfile">
+			<!-- <param name="saveDirectory">D:/Ajinky/Java Workspace/EduSmart Worksapce/EduSmartWebsite/Web/Upload</param> -->
+			<param name="saveDirectory">D:/EduSmartWebsite/Web/Upload</param>
+			<interceptor-ref name="fileUpload">
+        		<param name="maximumSize">4194304</param>
+        		<param name="allowedTypes">
+           	 		image/png,image/gif,image/jpeg,image/pjpeg
+        		</param>
+    		</interceptor-ref>
+    		<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">facultyProfile</result>
+		</action>
+		
+		<action name="addNewProduct" method="getAllProducts" class="com.edusmart.action.ProductAction">
+			<result name="success">/website/product/new_product.jsp</result>
+		</action>	
+		
+		<action name="getFacultyProfileProducts" class="com.edusmart.action.FacultyProfileAction" method="getFacultyProfileProducts">
+			<result name="success">/website/products/faculty_profile_products.jsp</result>
+		</action>
+		<action name="getFacultyProfileProducts" class="com.edusmart.action.FacultyProfileAction" method="getFacultyProfileProducts">
+			<result name="success">/website/products/faculty_profile_products.jsp</result>
+		</action>
+		
+		<!-- Product Categories Actions -->
+		
+		<action name="getAllProductCategories" method="getAllProductCategories" class="com.edusmart.action.ProductCategoryAction">
+			<result name="success" type="tiles">/product_categories.tiles</result>
+		</action>
+				
+		<action name="addProductCategory"  method="saveOrUpdateProductCategory" class="com.edusmart.action.ProductCategoryAction">
+			<result name="success" type="redirect">viewProductCategory</result>
+		</action>
+		<action name="getProductCategoryById" method="getProductCategoryById" class="com.edusmart.action.ProductCategoryAction">
+			<result name="success">/pages/masters/update_product_categories.jsp</result>
+		</action>
+		<action name="deleteProductCategory" method="deleteProductCategory" class="com.edusmart.action.ProductCategoryAction">
+			<result name="success" type="redirect">viewProductCategory</result>
+		</action>
+		
+		
+		<!-- Product SubCategories Actions -->
+		
+		<action name="getProductSubCategories" method="getAllProductSubCategories" class="com.edusmart.action.ProductSubCategoryAction">
+			<result name="success" type="tiles">/product_subcategories.tiles</result>
+		</action>				
+		<action name="addProductSubCategory"  method="saveOrUpdateProductSubCategory" class="com.edusmart.action.ProductSubCategoryAction">
+			<result name="success" type="redirect">viewProductSubCategory</result>
+		</action>
+		<action name="getProductSubCategoryById" method="getProductSubCategoryById" class="com.edusmart.action.ProductSubCategoryAction">
+			<result name="success">/pages/masters/update_product_subcategories.jsp</result>
+		</action>
+		<action name="deleteProductSubCategory" method="deleteProductSubCategory" class="com.edusmart.action.ProductSubCategoryAction">
+			<result name="success" type="redirect">viewProductSubCategory</result>
+		</action>
+		
+		
+		<!--Faculty List-->
+		<!-- <action name="facultylist" method="getAllFaculties" class="com.edusmart.action.FacultyAction">
+			<result name="success" type="tiles">facultylist</result>
+		</action> -->
+		
+		<action name="saveFaculty" class="com.edusmart.action.FacultyAction" method="saveOrUpdateFaculty">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="redirect">viewFaculties</result>
+		</action>
+		
+		
+		<!-- Product Actions -->
+		
+		<action name="facultyProducts" method="getAllProducts" class="com.edusmart.action.ProductAction">
+			<result name="success">product.jsp</result>
+		</action>				
+		<action name="addProduct"  method="saveOrUpdateProduct" class="com.edusmart.action.ProductAction">
+			<result name="success" type="redirect">/website/product/faculty_profile_products.jsp</result>
+			<result name="login" type="redirect">getAllProducts</result>
+		</action>
+		<action name="getProductById" method="getProductById" class="com.edusmart.action.ProductAction">
+			<result name="success">/website/product/update_profile_product.jsp</result>
+		</action>
+		<action name="deleteProduct" method="deleteProduct" class="com.edusmart.action.ProductAction">
+			<result name="success" type="redirect">getAllProducts</result>
+		</action>
+		
+		<!-- Cart -->
+		<action name="addToCart" class="com.edusmart.cart.AddProductToCart">
+			<result name="success" type="redirect">viewCart</result>
+		</action>
+		<action name="viewCart" class="com.edusmart.cart.ViewCart">
+			<result name="success" type="tiles">viewCart</result>
+		</action>
+		
+		<!-- End Of Cart -->
+		
+		<action name="getProductSubCategories" class="com.edusmart.dao.ProductTB" method="getProductSubCategories">
+			<result type="json"></result>
+		</action>
+		<action name="getLevels" class="com.edusmart.dao.ProductTB" method="getLevels">
+			<result type="json"></result>
+		</action>
+		<action name="getSubjects" class="com.edusmart.dao.ProductTB" method="getSubjects">
+			<result type="json"></result>
+		</action>
+		
+		<action name="getStates" class="com.edusmart.dao.City" method="getStates">
+			<result type="json"></result>
+		</action>
+		<action name="getCities" class="com.edusmart.dao.City" method="getCities">
+			<result type="json"></result>
+		</action>
+		<action name="getCourses" class="com.edusmart.action.CommonAction" method="getCourses">
+			<result type="json"></result>
+		</action>
+		<action name="getCourseLevels" class="com.edusmart.action.CommonAction" method="getCourseLevels">
+			<result type="json"></result>
+		</action>
+		<action name="getCourseSubjects" class="com.edusmart.action.CommonAction" method="getCourseSubjects">
+			<result type="json"></result>
+		</action>
+		<action name="getCourseSubjectsFc" class="com.edusmart.action.CommonAction" method="getCourseSubjectsFc">
+			<result type="json"></result>
+		</action>
+		<action name="getFaculties" class="com.edusmart.action.CommonAction" method="getFaculties">
+			<result type="json"></result>
+		</action>
+		<action name="getCoachingModes" class="com.edusmart.dao.EnquiryTB" method="getCoachingModes">
+			<result type="json"></result>
+		</action>
+		<action name="getSubjectCoachingModes" class="com.edusmart.action.CommonAction" method="getCoachingModes">
+			<result type="json"></result>
+		</action>
+		<action name="getBranches" class="com.edusmart.action.CommonAction" method="getBranches">
+			<result type="json"></result>
+		</action>
+		<action name="getFacultyBatches" class="com.edusmart.action.CommonAction" method="getFacultySubjects">
+			<result type="json"></result>
+		</action>
+		
+		<action name="uploadImage" class="com.edusmart.action.UploadAction" method="uploadImage">
+		    <interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		<result type="json"></result>
+		</action>
+		
+		
+		
+		<!--Add News-->
+		<action name="addnews" class="com.edusmart.action.NewsAction" method="saveOrUpdateNews">
+		    <result name="success">success.jsp</result>
+		</action>
+			
+		<!-- <action name="show" class="com.edusmart.action.NewsProfileAction" method="viewNewsPage">
+		 <result name="success" type="tiles">show</result> 
+		</action> -->
+		
+		<!--about page display  -->
+		 <action name="aboutPage" class="com.edusmart.action.AboutusAction" method="aboutUsShow">
+		 <result name="success" type="tiles">aboutPage</result>   
+		</action> 
+		
+		 <!--save About page Decription  display  -->
+		 <action name="saveAboutDecription" class="com.edusmart.action.AboutusAction" method="saveAboutDecription">
+		 <result name="success" type="tiles">aboutPage</result>   
+		</action> 
+		 
+		 
+		  <!--save saveNewsAnnousement page Decription  display  -->
+		 <action name="saveNewsAnnousement" class="com.edusmart.action.NewsAnnousement" method="saveNewsAnnousement">
+		 <result name="success" type="redirect">show</result>   
+		</action>
+		 
+		 <action name="show" class="com.edusmart.action.NewsAnnousement" method="newsAnnousementDisplay">
+		 <result name="success" type="tiles">show</result> 
+		</action> 
+	
+		  <action name="deleteNews" class="com.edusmart.action.NewsAnnousement" method="deleteNews">
+		 	<result type="json"></result>
+		</action>
+		 <action name="editNews" class="com.edusmart.action.NewsAnnousement" method="academyUpdateNews">
+		 	 <result name="success" type="redirect">show</result>   
+		</action>
+		
+		  <action name="editEvent" class="com.edusmart.action.EventProfileAction" method="academyUpdateEvent">
+		 	 <result name="success" type="redirect">events</result>   
+		</action>
+		 
+		
+		 <action name="events" class="com.edusmart.action.EventProfileAction" method="viewEventPage">
+		 <result name="success" type="tiles">eventTiles</result> 
+		</action>
+		
+		 <action name="addEvent" class="com.edusmart.action.EventAction" method="addEvent">
+		 <result name="success" type="redirect">events</result> 
+		</action>
+		
+		 <action name="flushEvent" class="com.edusmart.action.EventAction" method="flushEvent">
+		 <result name="success" type="redirect">events</result> 
+		</action>
+		
+		  <!--Add academy profile post-->
+		 <action name="saveAcademyPost" class="com.edusmart.action.AcademyPostAction" method="saveAcademyPost">
+		 <result name="success"  type="redirect">academyProfilePostList</result>   
+		</action>	
+		
+		  <!-- Display academy profile post -->
+		 <action name="academyProfilePostList" >
+		 <result name="success" type="redirect">academyProfile</result>   
+		</action>
+		
+		 <action name="flushPost" class="com.edusmart.action.AcademyPostAction" method="flushPost">
+		 <result name="success" type="redirect">academyProfile</result> 
+		</action>
+	
+		 
+		 <action name="commentSave" class="com.edusmart.action.CommentLikeAction" method="saveCommentData">
+		 	 <result name="success" type="redirect">show</result>   
+		</action> 
+		
+		 <action name="likeCountAction" class="com.edusmart.action.CommentLikeAction" method="likeCountFunction">
+		 	 <result name="success" type="redirect">show</result>   
+		</action> 
+		 <action name="allNotification" >
+		 	 <result name="success" type="tiles">viewAllNotification</result>   
+		</action> 
+		 <!-- edit about page Description  -->
+		 <action name="editAboutDesc" class="com.edusmart.action.AboutusAction" method="editAboutDescription">
+		 	 <result name="success" type="redirect">aboutPage</result>   
+		</action>
+		
+		<!-- delete about page Description  -->
+		 <action name="deleteAboutDescription" class="com.edusmart.action.AboutusAction" method="deleteAboutDescription">
+		 	<result type="json"></result>
+		</action>
+		
+		 <!-- edit about page Info Long Description  -->
+		 <action name="saveLongDescription" class="com.edusmart.action.AboutusAction" method="saveLongDescription">
+		<result name="success">aboutPage</result>
+		</action>
+		
+		 <!-- edit about page Info Address -->
+		 <action name="saveInfoAddress" class="com.edusmart.action.AboutusAction" method="saveInfoAddress">
+		<result name="success">aboutPage</result>
+		</action>
+	</package>	
+</struts> 

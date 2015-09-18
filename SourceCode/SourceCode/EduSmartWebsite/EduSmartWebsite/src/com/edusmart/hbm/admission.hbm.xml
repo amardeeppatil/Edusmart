@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 5, 2014 6:36:05 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.edusmart.dao.AdmissionTB" table="ADMISSIONTB">
+        <id name="AdmissionId" type="int" access="field">
+            <column name="ADMISSIONID" />
+            <generator class="increment" />
+        </id>
+        <property name="LevelId" type="int">
+            <column name="LEVELID" />
+        </property>
+        <property name="StudentID" type="int">
+            <column name="STUDENTID" />
+        </property>
+        <property name="CourseId" type="int">
+            <column name="COURSEID" />
+        </property>
+        <property name="SubjectId" type="int" access="field">
+            <column name="SUBJECTID" />
+        </property>
+        <property name="FacultyId" type="int" access="field">
+            <column name="FACULTYID" />
+        </property>
+        <property name="FacultySubjectId" type="int" access="field">
+            <column name="FACULTYSUBJECTID" />
+        </property>
+        <property name="AdmissionBy" type="int">
+            <column name="ADMISSIONBY" />
+        </property>
+        <property name="AdmissionDate" type="java.lang.String">
+            <column name="ADMISSIONDATE" />
+        </property>
+        <property name="Status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="Branchid" type="int">
+            <column name="BRANCHID" />
+        </property>
+        <property name="EnquiryId" type="int">
+            <column name="ENQUIRYID" />
+        </property>
+    </class>
+</hibernate-mapping>
